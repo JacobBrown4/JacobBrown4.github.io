@@ -1,0 +1,55 @@
+/*Header image*/
+
+/*Login*/
+
+/*Nav Bar*/
+
+#sticky {
+    position: fixed;
+    position: -webkit-sticky;
+    top: 0;
+    
+}
+
+nav {
+
+    text-align: center;
+    background-color: lightgreen;
+    border-radius: 0 0 50px 50px;
+    border-top: green solid 5px;
+    height: 50px;
+    width: 80%;
+}
+
+nav li{
+    display:inline-block;
+}
+
+#navButt, input {
+    border: green solid 5px;
+    display: inline-block;
+    width: 80px;
+    margin: 0 -2px 0 -2px;
+    height: 50px;
+    padding: 0;
+}
+
+#searchButt {
+    border: green solid 5px;
+    display: inline-block;
+    margin: .5em .5em .5em .5em;
+}
+
+/*Splash*/
+
+/*Filters*/
+
+/*Top Sale*/
+
+/*Games & Content*/
+h1 {
+    background-color: black;
+    height: 2000px;
+}
+
+/*Footer*/
