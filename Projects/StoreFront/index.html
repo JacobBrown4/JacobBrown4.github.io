@@ -1,34 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="main.css">
-    <title>Document</title>
+    <title>Galaxy Games</title>
 </head>
+
 <body>
     <div class="wrapper">
-    <section class="head">
-        <img src="img/Banner.png" style="width: 100%; height: 350px; border-radius: 50px 50px 0px 0px;">
-        <div id="stick">
-        <nav>
-            <li><button id="navButt"><b>HOME</b></button></li>
-            <li><button id="navButt"><b>SALES</b></button></li>
-            <li><button id="navButt"><b>GAMES</b></button></li>
-            <li><button id="navButt"><b>CONSOLES</b></button></li>
-            <input type="search" placeholder="search"><button id="searchButt"><B>GG</B></button>
-        </nav>
+       <div class="Login">
+            <a href="#">Login</a>
         </div>
-    </section>
-    <!--Header image-->
-    <h1>Buy Games!</h1>
-    <!--Login-->
-    <!--Nav Bar-->
-    <!--Splash-->
-    <!--Filters-->
-    <!--Top Sale-->
-    <!--Games & Content-->
-    <!--Footer-->
-</div>
+        <section class="head">
+            <!--<img src="img/Banner.png" style="width: 100%; height: 250px; border-radius: 50px 50px 0px 0px;">-->
+            <!--<img src="img/Banner1.jpg" style="position: static; top: 40px; background-color: rgb(0, 175, 0); object-fit: cover; width: 100%;  height: 50px;">-->
+            <div id="stick">
+                <nav>
+                    
+                    <li><button id="navButt"><b>NEW</b></button></li>
+                    <li><button id="navButt"><b>SALES</b></button></li>
+                    <li><button id="navButt"><b>GAMES</b></button></li>
+                    <li><button id="navButt"><b>CONSOLES</b></button></li>
+                    <input type="search" placeholder="search"><button id="searchButt"><B>GO</B></button>
+                </nav>
+            </div>
+            <div class="Splish">
+                <div class="Splash">
+                    <img src="img/Slide/game1.jpg" id="Slide1" /><p>GTA 7</p>
+                    <img src="img/Slide/game6.jpg" id="Slide2" />
+
+                    <img src="img/Slide/game7.jpg" id="Slide3" />
+
+                    <img src="img/Slide/game8.jpg" id="Slide4" />
+
+                </div>
+                <div class="SplashNav">
+                    <button id="SplashNavA" onclick="location.href='#Slide1'"></button>
+                    <button id="SplashNavA" onclick="location.href='#Slide2'"></a></button>
+                    <button id="SplashNavA" onclick="location.href='#Slide3'"></a></button>
+                    <button id="SplashNavA" onclick="location.href='#Slide4'"></a></button>
+                </div>
+            </div>
+        </section>
+        <!--Space-->
+        <div class="clear"></div>
+        <br>
+        <!--Filters-->
+        <section class="sidebar">
+            <section class="filters">
+                <p><b>Location</b></p>
+                <input id="zip" name="zip" type="text" placeholder="Zip Code" pattern="[0-9]{5}">
+                <p><b>Price</b></p>
+                <label class="CheckBoxes">Cheap
+                  <input type="radio" name="price">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="CheckBoxes">Less Cheap
+                  <input type="radio" name="price">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="CheckBoxes">Moderate
+                  <input type="radio" name="price">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="CheckBoxes">Normal
+                  <input type="radio" checked="checked" name="price">
+                  <span class="checkmark"></span>
+                </label>
+                <p><b>Genre</b></p>
+                <label class="CheckBoxes">3RD Person
+                  <input type="radio" name="genre">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="CheckBoxes">Open World
+                  <input type="radio" name="genre">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="CheckBoxes">Fighting
+                  <input type="radio" name="genre">
+                  <span class="checkmark"></span>
+                </label>
+
+            </section>
+            <!--Top Sale-->
+            <section class="HotSale">
+                <div id="SaleContent">
+                <h2>Spider-Man: Miles Morales</h2>
+                <img src="img/sale.jpg">
+                <h3 style="margin: 0 0 -10px 0">Hot Sale!</h3>
+                <p style="margin: 5 0 -10px 0">$14.99</p>
+                <button id="SaleButt">Buy Now!</button>
+            </div>
+            </section>
+        </section>
+        <!--Games & Content-->
+        <section class="content">
+
+            <div id="GameBox"><img src="img/games/game1.jpg" href="https://amazon.com"><p>GTA 7</p><p>$59.99</p><button>Pre-Order</button></div>
+            <div id="GameBox"><img src="img/games/game3.jpg" href="https://amazon.com"><p>Cyberpunk 2077</p><p>$59.99</p><button>Pre-Order</button></div>
+            <div id="GameBox"><img src="img/games/game4.jfif" href="https://amazon.com"><p>DBZ: Budokai Tenkaichi 3 Remastered</p><p>$45.99</p><button>Add to
+                    Cart</button></div>
+            <div id="GameBox"><img src="img/games/Game5.png" href="https://amazon.com"><p>Incredible Hulk: Ultimate Destruction HD</p><p>$45.99</p><button>Add to
+                    Cart</button></div>
+            <div id="GameBox"><img src="img/games/game5.jfif" href="https://amazon.com"><p>The Simpsons: Hit & Run Remastered</p><p>$45.99</p><button>Add to
+                    Cart</button></div>
+            <div id="GameBox"><img src="img/games/game2.jpg" href="https://amazon.com"><p>Star Citizen: Complete Edition</p><p>$199.99</p><button>Add to
+                    Cart</button></div>
+            <div id="GameBox"><img src="img/games/game6.jpg" href="https://amazon.com"><p>Batman: Knightfall</p><p>$59.99</p><button>Add to
+                    Cart</button></div>
+                    <div id="GameBox"><img src="img/games/game8.jpg" href="https://amazon.com"><p>Injustice: Marvel Vs. DC</p><p>$59.99</p><button>Add to
+                        Cart</button></div>
+                        <div id="GameBox"><img src="img/games/game7.jpg" href="https://amazon.com"><p>The Flash: Flash Point Paradox</p><p>$59.99</p><button>Add to
+                            Cart</button></div>
+        </section>
+        <!--Footer-->
+        <div class="clear"></div>
+        <br>
+        <footer>
+            <span>&copy;2020</span>
+            <ul id="menuFooter">
+                <li><a href="#">Sitemap</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li>Website by Jacob</li>
+            </ul>
+        </footer>
+    </div>
 </body>
+
 </html>
