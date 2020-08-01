@@ -10,7 +10,7 @@ div.clear {
 .wrapper {
     margin: auto;
     margin-top: -10px;
-    width: 75%;
+    width: 80%;
     font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 
@@ -54,7 +54,7 @@ div.clear {
 
 .Login a, .Login a:visited {
     color:white;
-
+    
 }
 
 /*Nav Bar*/
@@ -73,7 +73,7 @@ div.clear {
     top: 0;
 }
 
-nav {
+#Navigation {
     text-align: center;
     background: linear-gradient(green, lightgreen);
     box-shadow: 0px 0px 10px #777;
@@ -87,7 +87,7 @@ nav {
     top: -1px;
 }
 
-nav li {
+#Navigation li {
     display: inline-block;
 }
 
@@ -165,7 +165,7 @@ input {
     height: 15px;
     float: top;
     text-align: center;
-        z-index: 1;
+    z-index: 1;
 }
 
 #SplashNavA, #SplashNavA:active, #SplashNavA:hover, .SplashNav a {
@@ -213,13 +213,13 @@ input {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-  }
-  .CheckBoxes input {
+}
+.CheckBoxes input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
-  }
-  .checkmark {
+}
+.checkmark {
     position: absolute;
     top: 0px;
     right: 40px;
@@ -227,14 +227,14 @@ input {
     width: 10px;
     background-color: grey;
     border-radius: 50%;
-  }
-  .CheckBoxes:hover input ~ .checkmark {
+}
+.CheckBoxes:hover input ~ .checkmark {
     background-color: darkgrey;
-  }
+}
   .CheckBoxes input:checked ~ .checkmark {
-    background-color: green;
-  }
-/*Top Sale*/
+      background-color: green;
+    }
+    /*Top Sale*/
 .HotSale {
     
     background-color: darkgreen;
@@ -250,7 +250,7 @@ input {
     padding: 10px;
 }
 .HotSale img {
-background-color: black;
+    background-color: black;
     object-fit: cover;
     width: 80%;
     border-radius: 5px;
@@ -337,19 +337,80 @@ footer ul li {
     display: inline-block;
     padding: 0 3px 0 0;
     margin: 0;
-
+    
 }
 footer ul li::before {
     content: " | ";
     padding-right: 3px;
-
+    
 }
 footer a, footer a:visited {
     color: #fff;
     text-decoration: none;
-
+    
 }
 footer a:hover {
     color: #fff;
     text-decoration: underline;
 }
+/*Attempting mobile support*/
+@media only screen and (max-width: 660px) {
+    .wrapper {
+      width: 100%;
+    }
+    #Navigation {
+        text-align: center;
+        background-color: green;
+        box-shadow: 0px 0px 10px #777;
+        border-radius: 0;
+        margin: 0px;
+        font-size: 20px;
+        height: 45px;
+        width: 100%;
+        z-index: 10;
+        position: relative;
+        top: -1px;
+    }
+    .Splash{
+        border-radius: 0px;
+    }
+    .sidebar{
+        float: initial;
+        width: 100%;
+    }
+
+    .HotSale
+    {
+        display:none;
+    }
+    .filters {
+        width:90%;
+        height: 250px;
+        font-size: 8px;
+        padding: 3px;
+        margin: auto;
+    }
+    .content{
+        width: 90%;
+        margin: 5px;
+    }
+    .MobileWrapper {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;    
+        align-items: center;
+        justify-content: center;
+    }
+    #searchButt, nav input {
+        display: none;
+    }
+    footer
+    {
+        height: 10%;
+        position: relative;
+        bottom: -10px;
+        font-size: 1em;
+    }
+
+  }
