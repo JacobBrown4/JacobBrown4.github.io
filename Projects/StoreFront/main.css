@@ -371,15 +371,25 @@ footer a:hover {
 
 /*Attempting mobile support*/
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 860px) {
+    .content {
+        padding: 10px 0 10px 0;
+        width: 78%;
+    }
     .filters {
         overflow: hidden;
         text-align: left;
         height: 350px;
     }
+    #GameBox {
+    margin: 8px 3% 8px 3%;
+    }
+    #searchButt, nav input {
+        display: none;
+    }
 }
 
-@media only screen and (max-width: 660px) {
+@media only screen and (max-width: 690px) {
     #Navigation {
         text-align: center;
         background-color: green;
