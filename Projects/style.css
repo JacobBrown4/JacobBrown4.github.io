@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    color: #353535;
+}
+
+.offset:before{
+    display:block;
+    content:"";
+    height: 4rem;
+    margin-top: -4rem;
+}
+
+/*--Nav--*/
+.navbar {
+text-transform: uppercase;
+font-weight: 700;
+font-size: .9rem;
+letter-spacing: .1rem;
+background-color: rgba(0,0,0,0.8) !important;
+}
+
+.navbar-brand img {
+    height: 2rem;
+}
+
+.navbar-nav li {
+    padding-right: .7rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
+    padding-top: .6rem;
+}
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link:hover{
+    color: #7100ce;
+}
+
+/*--Landing--*/
+.home-inner {
+    background-image: url(img/banner.jpg);
+}
+
+.caption {
+    width:100%;
+    max-width: 100%;
+    position: absolute;
+    top: 38%;
+    z-index: 1;
+    color: white;
+    text-transform: uppercase;
+}
+
+.caption h1{
+    font-size: 4.5rem;
+    font-weight: 700;
+    letter-spacing: .3rem;
+    text-shadow: .1rem .1rem .8rem black;
+    padding-bottom: 1rem;
+}
+.caption h3{
+    font-size: 2rem;
+    text-shadow: .1rem .1rem .5rem black;
+    padding-bottom: 1.6rem;
+}
+
+.btn-lg {
+    border-width: medium;
+    padding: .6rem 1.3rem;
+    font-size: 1.1rem;
+}
+
+/*--About me --*/
+.jumbotron{
+    margin-bottom: 0;
+    padding: 2rem 0 3.5rem;
+    border-radius: 0;
+}
+
+h3.heading {
+font-size:1.9rem;
+font-weight: 700;
+text-transform: uppercase;
+margin-bottom: 1.9rem;
+}
+.heading-underling{
+width: 12rem;
+height: .2rem;
+background-color: #7100ce;
+margin: 0 auto 2rem;
+}
+
+.headshot img {
+    width:80%;
+    border-radius: 50%;
+    display:block;
+    margin: auto;
+}
+
+.softSkills{
+    text-align: center;
+}
+
+/*skills*/
+
+.fixed{
+    background-image: url(img/cta01.jpg);
+    z-index:-1;
+}
+.dark{
+    background-color: rgba(0,0,0,0.2);
+    color:white;
+    padding: 4rem 2rem;
+}
+
+.feature svg.svg-inline--fa {
+    color:#7100ce;
+}
+
+.fixed-background h3{
+font-size: 1.3rem;
+text-transform: uppercase;
+margin-bottom: 2rem;
+padding-bottom: .4rem;
+}
+.fixed-background p{
+    margin-top: 1.5rem;
+font-size: 1.1rem;
+}
+
+/*--Portfolio--*/
+
+
+
+/*Contact Me*/
+.btn-secondary {
+    border-width: medium;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    padding: .6rem 1.2rem;
+    margin: 1rem;
+    color:white;
+    background-color: #7100ce;
+    border-color: #7100ce;
+}
+
+.btn-secondary:hover {
+    background-color: #3a0069;
+    border-color: #3a0069;
+}
+
+
+
+/*--Footer--*/
+footer img {
+    width: 5rem;
+    height: 5rem;
+}
+
+
