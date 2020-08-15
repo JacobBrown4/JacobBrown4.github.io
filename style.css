@@ -76,10 +76,13 @@ background-color: rgba(0,0,0,0.8) !important;
 /*--About me --*/
 .jumbotron{
     margin-bottom: 0;
-    padding: 2rem 0 3.5rem;
+    padding: 2rem 0 2rem;
     border-radius: 0;
 }
 
+.jumbotron p{
+    font-size: 0.9rem;
+}
 h3.heading {
 font-size:1.9rem;
 font-weight: 700;
@@ -115,9 +118,16 @@ margin: 0 auto 2rem;
     color:white;
     padding: 4rem 2rem;
 }
+.dark h2{
+    font-size:1.9rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 1.9rem;
+}
 
 .feature svg.svg-inline--fa {
     color:#7100ce;
+    filter: drop-shadow(0rem 0rem 0.4rem white);
 }
 
 .fixed-background h3{
@@ -132,10 +142,40 @@ font-size: 1.1rem;
 }
 
 /*--Portfolio--*/
+#portfolio {
+    text-align: center;
+    margin-bottom: 0;
+    padding: 2rem 0 2rem;
+}
+
+.project{
+
+    margin: 0.2rem;
+}
+
+.project h6{
+    font-weight: 700;
+}
+
+.project p {
+    font-size: .8rem;
+}
+
+.project img {
+    border: 3px solid #7100ce;
+    width: 100%;
+    display: block;
+    margin: auto;
+}
 
 
 
 /*Contact Me*/
+.lead {
+    background-color: rgba(0,0,0,0.8);
+    color:white;
+}
+
 .btn-secondary {
     border-width: medium;
     text-transform: uppercase;
@@ -155,9 +195,33 @@ font-size: 1.1rem;
 
 
 /*--Footer--*/
+footer {
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    padding: 2rem 0 2rem 0;
+    text-align: center;
+    margin-top: -1rem;;
+}
+
 footer img {
     width: 5rem;
     height: 5rem;
+    margin: 1.5rem 0;
 }
 
+footer a {
+    color: white;
+}
 
+footer svg.svg-inline--fa{
+    font-size: 3rem;
+    margin: 1.2rem 0.5rem 0 0.5rem;
+}
+footer svg.svg-inline--fa:hover{
+    color: #7100ce !important;
+}
+
+hr.socket{
+width:100%;
+border-top: 0.2rem solid #353535
+}
