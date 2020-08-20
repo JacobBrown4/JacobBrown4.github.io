@@ -42,6 +42,7 @@ background-color: rgba(0,0,0,0.8) !important;
 /*--Landing--*/
 .home-inner {
     background-image: url(img/banner.jpg);
+    filter: brightness(55%);
 }
 
 .caption {
@@ -111,6 +112,7 @@ margin: 0 auto 2rem;
 
 .fixed{
     background-image: url(img/cta01.jpg);
+    filter: brightness(65%);
     z-index:-1;
 }
 .dark{
