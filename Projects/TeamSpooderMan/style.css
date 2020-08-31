@@ -1,0 +1,29 @@
+body {
+  background-color: blue;
+}
+
+.profile {
+  margin: 1.6rem;
+  border: solid black thin;
+  width: 20rem;
+  height: 20rem;
+  text-align: Center;
+  color: red;
+  contain: content;
+  text-shadow: .5px 1px 1px white;
+}
+.profile img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+#profile-pic {
+  position: relative;
+  border-radius: 100%;
+}
+
+.EasterEgg {
+    color:transparent;
+}
