@@ -127,7 +127,7 @@ margin: 0 auto 2rem;
 /*skills*/
 
 .fixed{
-    background-image: url(img/cta01.jpg);
+    background-image: url(img/banner2.jpg);
     filter: brightness(65%);
     z-index:-1;
 }
@@ -145,7 +145,6 @@ margin: 0 auto 2rem;
 
 .feature svg.svg-inline--fa {
     color:#7100ce;
-    filter: drop-shadow(0rem 0rem 0.4rem white);
 }
 
 .fixed-background h3{
