@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Carina — care sheet</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+	<style>
+		:root {
+			--jb-bg: #121214;
+			--jb-bg-elevated: #1c1c21;
+			--jb-text: #e8e6ed;
+			--jb-text-muted: #9b96a8;
+			--jb-accent: #9d5cff;
+			--jb-accent-dim: #7100ce;
+			--jb-header: #0a0a0c;
+			--jb-card-border: rgba(255, 255, 255, 0.08);
+			--jb-link: #c9a8ff;
+			--jb-link-hover: #e4d4ff;
+		}
+
+		html {
+			color-scheme: dark;
+		}
+
+		body {
+			font-family: 'Montserrat', system-ui, sans-serif;
+			color: var(--jb-text);
+			background: var(--jb-bg);
+			background-image: linear-gradient(180deg, #16161a 0%, var(--jb-bg) 42%);
+			min-height: 100vh;
+		}
+
+		a {
+			color: var(--jb-link);
+		}
+
+		a:hover {
+			color: var(--jb-link-hover);
+		}
+
+		.text-muted {
+			color: var(--jb-text-muted) !important;
+		}
+
+		.page-header {
+			position: relative;
+			color: #fff;
+			padding: 1.75rem 0 2rem;
+			margin-bottom: 1.5rem;
+			border-bottom: 1px solid rgba(18, 18, 22, 0.98);
+			background-color: var(--jb-header);
+			isolation: isolate;
+		}
+
+		.page-header::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 0;
+			pointer-events: none;
+			background-image:
+				linear-gradient(
+					180deg,
+					rgba(10, 10, 12, 0.88) 0%,
+					rgba(10, 10, 12, 0.82) 65%,
+					rgba(10, 10, 12, 0.97) 100%
+				),
+				url(img/banner.jpg);
+			background-size: cover;
+			background-position: center center;
+			background-repeat: no-repeat;
+			transform: translateZ(0);
+		}
+
+		.page-header .container {
+			position: relative;
+			z-index: 1;
+		}
+
+		.page-header h1 {
+			font-weight: 700;
+			letter-spacing: 0.06em;
+			text-transform: uppercase;
+			font-size: clamp(1.5rem, 4vw, 2rem);
+			margin-bottom: 0.25rem;
+		}
+
+		.page-header .tagline {
+			opacity: 0.9;
+			font-size: 0.95rem;
+		}
+
+		.tagline-wiki-link {
+			display: inline-flex;
+			align-items: center;
+			margin-left: 0.35rem;
+			color: var(--jb-link);
+			font-size: 0.85em;
+			line-height: 1;
+			text-decoration: none;
+			vertical-align: middle;
+			opacity: 0.95;
+		}
+
+		.tagline-wiki-link:hover {
+			color: var(--jb-link-hover);
+			opacity: 1;
+		}
+
+		.tagline-wiki-link:focus-visible {
+			outline: 2px solid var(--jb-accent);
+			outline-offset: 3px;
+			border-radius: 2px;
+		}
+
+		.accent-rule {
+			width: 6rem;
+			height: 0.2rem;
+			background-color: var(--jb-accent-dim);
+			border-radius: 999px;
+			margin: 0.75rem 0 0;
+		}
+
+		.hero-photo-frame {
+			aspect-ratio: 1 / 1;
+			width: 100%;
+			max-width: min(100%, 380px);
+			margin-left: auto;
+			margin-right: auto;
+			border-radius: 1rem;
+			overflow: hidden;
+			background: var(--jb-bg-elevated);
+			border: 2px solid var(--jb-accent);
+			box-shadow:
+				0 0 0 1px rgba(157, 92, 255, 0.25),
+				0 0 1.25rem rgba(157, 92, 255, 0.12),
+				0 0.5rem 2rem rgba(0, 0, 0, 0.45);
+		}
+
+		.hero-photo {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			object-position: center;
+		}
+
+		.section-title {
+			font-weight: 700;
+			text-transform: uppercase;
+			font-size: 0.85rem;
+			letter-spacing: 0.08em;
+			color: var(--jb-accent);
+			margin-bottom: 0.5rem;
+			text-align: center;
+		}
+
+		.hero-intro-row {
+			align-items: stretch;
+		}
+
+		.hero-photo-col {
+			display: flex;
+			justify-content: center;
+		}
+
+		@media (min-width: 992px) {
+			.hero-intro-row {
+				align-items: center;
+				--bs-gutter-x: 1rem;
+			}
+
+			.section-title.section-title--with-hero {
+				text-align: left;
+			}
+
+			.hero-photo-col {
+				justify-content: flex-start;
+			}
+
+			.hero-photo-col .hero-photo-frame {
+				width: 300px;
+				max-width: 100%;
+				margin-left: 0;
+				margin-right: 0;
+			}
+		}
+
+		.row-notes {
+			justify-content: center;
+		}
+
+		.row-notes .info-card h2 {
+			justify-content: center;
+		}
+
+		.commands-preface {
+			font-size: 0.85rem;
+			color: var(--jb-text-muted);
+			border-left: 3px solid var(--jb-accent-dim);
+			padding-left: 0.75rem;
+			margin-bottom: 1rem;
+			line-height: 1.45;
+		}
+
+		.commands-heading {
+			margin-bottom: 0;
+		}
+
+		.commands-toggle {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 0.5rem;
+			width: 100%;
+			padding: 0.4rem 0.6rem;
+			margin: 0 0 0.15rem;
+			border: none;
+			border-radius: 0.5rem;
+			background: transparent;
+			color: inherit;
+			font: inherit;
+			font-weight: 700;
+			font-size: 1rem;
+			cursor: pointer;
+			-webkit-tap-highlight-color: transparent;
+		}
+
+		.commands-toggle:hover {
+			background: rgba(255, 255, 255, 0.06);
+		}
+
+		.commands-toggle:focus-visible {
+			outline: 2px solid var(--jb-accent);
+			outline-offset: 2px;
+		}
+
+		.commands-toggle .commands-chevron {
+			font-size: 0.72rem;
+			color: var(--jb-accent);
+			opacity: 0.95;
+			transition: transform 0.35s cubic-bezier(0.33, 1, 0.68, 1);
+		}
+
+		.commands-toggle[aria-expanded='true'] .commands-chevron {
+			transform: rotate(180deg);
+		}
+
+		.commands-tap-hint {
+			margin-bottom: 0.5rem;
+			line-height: 1.35;
+		}
+
+		.commands-card:has(.commands-toggle[aria-expanded='true']) .commands-tap-hint {
+			display: none;
+		}
+
+		.row-notes .commands-col {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.info-card.commands-card {
+			flex: 1 1 auto;
+			width: 100%;
+			height: auto;
+			display: flex;
+			flex-direction: column;
+			min-height: 100%;
+			cursor: pointer;
+			transition: border-color 0.35s ease, box-shadow 0.35s ease;
+			-webkit-tap-highlight-color: transparent;
+		}
+
+		.commands-card-body {
+			flex: 1 1 auto;
+			display: flex;
+			flex-direction: column;
+			min-height: 0;
+		}
+
+		.commands-card:has(.commands-toggle[aria-expanded='true']) {
+			border-color: rgba(157, 92, 255, 0.35);
+			box-shadow:
+				0 0 0 1px rgba(157, 92, 255, 0.18),
+				0 0.35rem 1.15rem rgba(0, 0, 0, 0.28);
+		}
+
+		#commandsCollapse {
+			overflow: hidden;
+		}
+
+		#commandsCollapse.collapsing {
+			transition: height 0.55s cubic-bezier(0.33, 1, 0.68, 1) !important;
+		}
+
+		.commands-collapse-inner {
+			opacity: 0;
+			transform: translateY(-0.4rem);
+			transition: opacity 0.4s ease 0.08s, transform 0.4s cubic-bezier(0.33, 1, 0.68, 1) 0.08s;
+		}
+
+		#commandsCollapse.show .commands-collapse-inner {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			.info-card.commands-card {
+				transition: none;
+			}
+
+			#commandsCollapse.collapsing {
+				transition: height 0.15s ease !important;
+			}
+
+			.commands-collapse-inner,
+			#commandsCollapse.show .commands-collapse-inner {
+				opacity: 1;
+				transform: none;
+				transition: none;
+			}
+
+			.commands-toggle .commands-chevron {
+				transition: none;
+			}
+		}
+
+		.row-vet {
+			justify-content: center;
+		}
+
+		.vet-card .card-body {
+			text-align: center;
+		}
+
+		.vet-card h2 {
+			justify-content: center;
+		}
+
+		.vet-card dt {
+			justify-content: center;
+		}
+
+		.sitter-card {
+			max-width: 42rem;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.sitter-card .card-body {
+			text-align: center;
+		}
+
+		.info-card {
+			border: 1px solid var(--jb-card-border);
+			border-radius: 0.75rem;
+			background: var(--jb-bg-elevated);
+			box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.25);
+			height: 100%;
+		}
+
+		.info-card strong {
+			color: #fff;
+		}
+
+		.info-card .card-body {
+			padding: 1.15rem 1.25rem;
+		}
+
+		.info-card h2 {
+			font-size: 1rem;
+			font-weight: 700;
+			margin-bottom: 0.65rem;
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+		}
+
+		.info-card h2 i {
+			color: var(--jb-accent);
+			font-size: 1.1rem;
+		}
+
+		.info-card .small,
+		.info-card ul {
+			color: var(--jb-text);
+		}
+
+		.info-card dl {
+			margin-bottom: 0;
+			font-size: 0.9rem;
+		}
+
+		.info-card dt {
+			font-weight: 600;
+			margin-top: 0.5rem;
+			display: flex;
+			align-items: baseline;
+			gap: 0.45rem;
+		}
+
+		.info-card dt:first-child {
+			margin-top: 0;
+		}
+
+		.info-card dt .dt-icon {
+			flex-shrink: 0;
+			width: 0.85rem;
+			text-align: center;
+			font-size: 0.68rem;
+			color: var(--jb-accent);
+			opacity: 0.9;
+			position: relative;
+			top: 0.05rem;
+		}
+
+		.info-card.commands-card dt {
+			align-items: center;
+			gap: 0.55rem;
+		}
+
+		.info-card.commands-card dt .dt-icon {
+			width: 1.2rem;
+			font-size: 1.05rem;
+			color: #fff;
+			opacity: 1;
+			top: 0;
+			filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
+		}
+
+		.info-card dd {
+			margin-bottom: 0;
+		}
+
+	</style>
+</head>
+
+<body>
+	<header class="page-header">
+		<div class="container">
+			<h1>Carina Ruth Brown</h1>
+			<p class="tagline mb-0"><em>Carina</em>: a constellation containing the second-brightest star in the night sky. <a href="https://en.wikipedia.org/wiki/Carina_(constellation)" class="tagline-wiki-link" target="_blank" rel="noopener noreferrer" aria-label="Carina (constellation) on Wikipedia"><i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></a></p>
+			<div class="accent-rule" role="presentation"></div>
+		</div>
+	</header>
+
+	<main class="container pb-4">
+		<div class="row g-4 mb-4 hero-intro-row">
+			<div class="col-12 col-lg-auto hero-photo-col">
+				<div class="hero-photo-frame">
+					<img class="hero-photo" src="img/Carina.jpg" alt="Carina" width="800" height="800">
+				</div>
+			</div>
+			<div class="col-12 col-lg d-flex flex-column justify-content-center">
+				<p class="section-title section-title--with-hero mb-2">At a glance</p>
+				<div class="row g-3 flex-grow-1 align-items-stretch">
+					<div class="col-sm-6 d-flex">
+						<div class="info-card w-100">
+							<div class="card-body">
+								<h2><i class="fa-solid fa-paw" aria-hidden="true"></i> Basics</h2>
+								<dl>
+									<dt><i class="fa-solid fa-dog dt-icon" aria-hidden="true"></i> Breed / mix</dt>
+									<dd>Australian Shepherd</dd>
+									<dt><i class="fa-solid fa-cake-candles dt-icon" aria-hidden="true"></i> Age</dt>
+									<dd><span id="carina-age">—</span> (born Mar 18, 2022)</dd>
+									<dt><i class="fa-solid fa-weight-scale dt-icon" aria-hidden="true"></i> Weight</dt>
+									<dd>~55 lb (last vet visit)</dd>
+									<dt><i class="fa-solid fa-microchip dt-icon" aria-hidden="true"></i> Microchip</dt>
+									<dd>HomeAgain #985 141 005 867 927</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 d-flex">
+						<div class="info-card w-100">
+							<div class="card-body">
+								<h2><i class="fa-solid fa-kit-medical" aria-hidden="true"></i> Meds &amp; supplies</h2>
+								<dl>
+									<dt><i class="fa-solid fa-triangle-exclamation dt-icon" aria-hidden="true"></i> Allergies</dt>
+									<dd>None.</dd>
+									<dt><i class="fa-solid fa-pills dt-icon" aria-hidden="true"></i> Medications</dt>
+									<dd>None daily.</dd>
+									<dt><i class="fa-solid fa-bug dt-icon" aria-hidden="true"></i> Flea / tick</dt>
+									<dd>Simparica TRIO Chewable  — 1st of month</dd>
+									<dt><i class="fa-solid fa-syringe dt-icon" aria-hidden="true"></i> Shots</dt>
+									<dd>Up to date on all shots. Annual boosters as needed.</dd>
+									<!--
+										<dt><i class="fa-solid fa-box-open dt-icon" aria-hidden="true"></i> Extras</dt>
+										<dd>Poop bags on leash hook; towels by back door for wet paws.</dd>
+									-->
+								</dl>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<p class="section-title">Notes</p>
+		<div class="row g-3 mb-4 row-notes justify-content-center">
+			<div class="col-12 col-md-6 col-xl-3">
+				<div class="info-card">
+					<div class="card-body">
+						<h2><i class="fa-solid fa-bowl-food" aria-hidden="true"></i> Feeding</h2>
+						<dl>
+							<dt><i class="fa-solid fa-bone dt-icon" aria-hidden="true"></i> Food</dt>
+							<dd>IAMS Mini Chunks — 2 1/2 cups total per day</dd>
+							<dt><i class="fa-solid fa-clock dt-icon" aria-hidden="true"></i> Schedule</dt>
+							<dd>2 or 3 times daily. Times at home: 9:00 AM, 12:00 PM, 5:30 PM</dd>
+							<dt><i class="fa-solid fa-utensils dt-icon" aria-hidden="true"></i> Human food</dt>
+							<dd>She is allowed very small amounts only if she isn't begging. She knows she should lay down somewhat out of sight while you're eating.</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-xl-3">
+				<div class="info-card">
+					<div class="card-body">
+						<h2><i class="fa-solid fa-moon" aria-hidden="true"></i> Sleep &amp; crate</h2>
+						<dl>
+							<dt><i class="fa-solid fa-bed dt-icon" aria-hidden="true"></i> Overnight</dt>
+							<dd>Will typically want to sleep next to your bed or on the foot of it. Crate available if she seems anxious (door open by default).</dd>
+							<dt><i class="fa-solid fa-hourglass-half dt-icon" aria-hidden="true"></i> Alone time</dt>
+							<dd>OK alone as long as you've "Carina-proofed" the house. Otherwise she is perfectly content locked in her crate.</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-xl-3">
+				<div class="info-card">
+					<div class="card-body">
+						<h2><i class="fa-solid fa-dog" aria-hidden="true"></i> Manners</h2>
+						<ul class="small mb-0 ps-3">
+							<li><strong>People:</strong> Friendly, although a bit standoffish with strangers.</li>
+							<li><strong>Other dogs:</strong> Gets along well, either ignores them or pesters them to play.</li>
+							<li><strong>Cats:</strong> Fine with them in theory, terrified of most in practice. Acts tough if she sees one outside but does nothing up close.</li>
+							<li><strong>Crate:</strong> Crate trained and loves it as her safe space and chill spot. She'll want free access to it or a similiar dark nook.</li>
+							<li>Loves to shred paper and cardboard. Her only bad habit. So be sure to keep your papers and cardboard out of reach. You can give her your junkmail for free shredding..</li>
+							<li>Only barks when she is spooked. (Loud noises, knocking, people yelling nearby, etc.) If so use "Shh" and tell her it's ok. She will calm a bit. She may want to go into her crate for a second before she'll fully stop.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-xl-3 commands-col">
+				<div class="info-card commands-card">
+					<div class="card-body commands-card-body">
+						<h2 class="commands-heading">
+							<button type="button" class="commands-toggle" id="commandsToggle" data-bs-toggle="collapse" data-bs-target="#commandsCollapse" aria-expanded="false" aria-controls="commandsCollapse">
+								<i class="fa-solid fa-hand-sparkles" aria-hidden="true"></i>
+								<span>Commands</span>
+								<i class="fa-solid fa-chevron-down commands-chevron" aria-hidden="true"></i>
+							</button>
+						</h2>
+						<p class="commands-tap-hint small text-muted text-center">Tap to expand</p>
+						<div class="collapse" id="commandsCollapse" role="region" aria-labelledby="commandsToggle">
+							<div class="commands-collapse-inner">
+								<p class="commands-preface mb-0">She is much more responsive to hand gestures than verbal ones for these commands. Doing both at once will help.</p>
+								<dl class="mt-3 mb-0">
+								<dt><i class="fa-solid fa-hand-point-down dt-icon" aria-hidden="true"></i> Sit</dt>
+								<dd>Point down with your finger.</dd>
+								<dt><i class="fa-solid fa-hand dt-icon" aria-hidden="true"></i> Down</dt>
+								<dd>Gesture down with a flat hand.</dd>
+								<dt><i class="fa-solid fa-handshake dt-icon" aria-hidden="true"></i> Shake</dt>
+								<dd>Hold out your hand, palm up.</dd>
+								<dt><i class="fa-solid fa-hands dt-icon" aria-hidden="true"></i> Wave</dt>
+								<dd>Wave “hi.”</dd>
+								<dt><i class="fa-solid fa-hand-paper dt-icon" aria-hidden="true"></i> Wait</dt>
+								<dd>Open palm, “stop” gesture. Release with an <strong>okay</strong>. Somewhat reliable, still working on it.</dd>
+								<dt><i class="fa-solid fa-volume-xmark dt-icon" aria-hidden="true"></i> Shhh</dt>
+								<dd>Finger to your mouth and make a shh sound. Won't instantly stop her barking but will get her to start calming down until she will.</dd>
+								<dt><i class="fa-solid fa-arrows-spin dt-icon" aria-hidden="true"></i> Spin</dt>
+								<dd>Point down and spin your finger.</dd>
+								<dt><i class="fa-solid fa-hand-holding dt-icon" aria-hidden="true"></i> Up</dt>
+								<dd>Flat hand, palm facing up, gesturing upward. Contextual, she may jump in place, lean up on something, or get on top of something. She'll figure it out, she's smart.</dd>
+								<dt><i class="fa-solid fa-volume-high dt-icon" aria-hidden="true"></i> Come</dt>
+								<dd>No real command, but is trained to come to a good mouth whistle (somewhat reliable), and to her electronic dog whistle (<strong>Very</strong> reliable and from up to a mile away).</dd>
+								<dt><i class="fa-solid fa-box dt-icon" aria-hidden="true"></i> Crate</dt>
+								<dd>Verbal command mostly.</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<p class="section-title">Vet info</p>
+		<div class="row g-3 mb-2 row-vet justify-content-center">
+			<div class="col-12 col-lg-8 col-xl-7">
+				<div class="info-card vet-card border-start border-4" style="border-left-color: var(--jb-accent-dim) !important;">
+					<div class="card-body">
+						<h2><i class="fa-solid fa-stethoscope" aria-hidden="true"></i> Vet</h2>
+						<dl>
+							<dt><i class="fa-solid fa-building dt-icon" aria-hidden="true"></i> Clinic</dt>
+							<dd>Battle Ground Veterinary Clinic</dd>
+							<dt><i class="fa-solid fa-phone dt-icon" aria-hidden="true"></i> Phone</dt>
+							<dd><a href="tel:+17657422587">(765) 742-2587</a></dd>
+							<dt><i class="fa-solid fa-location-dot dt-icon" aria-hidden="true"></i> Address</dt>
+							<dd>4410 Swisher Rd., West Lafayette, IN 47906</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+	<script>
+		(function () {
+			var card = document.querySelector('.commands-card');
+			var collapseEl = document.getElementById('commandsCollapse');
+			var toggleBtn = document.getElementById('commandsToggle');
+			if (card && collapseEl && toggleBtn) {
+				card.addEventListener('click', function (e) {
+					if (toggleBtn.contains(e.target)) {
+						return;
+					}
+					toggleBtn.click();
+				});
+			}
+		})();
+	</script>
+	<script>
+		(function () {
+			var birth = new Date(2022, 2, 18);
+			var today = new Date();
+			var years = today.getFullYear() - birth.getFullYear();
+			var months = today.getMonth() - birth.getMonth();
+			if (today.getDate() < birth.getDate()) {
+				months--;
+			}
+			if (months < 0) {
+				years--;
+				months += 12;
+			}
+			var el = document.getElementById('carina-age');
+			if (!el) {
+				return;
+			}
+			var yLabel = years === 1 ? 'year' : 'years';
+			var mLabel = months === 1 ? 'month' : 'months';
+			var text;
+			if (years > 0 && months > 0) {
+				text = years + ' ' + yLabel + ', ' + months + ' ' + mLabel + ' old';
+			} else if (years > 0) {
+				text = years + ' ' + yLabel + ' old';
+			} else {
+				text = months + ' ' + mLabel + ' old';
+			}
+			el.textContent = text;
+		})();
+	</script>
+</body>
+
+</html>
