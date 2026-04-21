@@ -40,6 +40,7 @@ background-color: rgba(0,0,0,0.8) !important;
 
 .navbar-brand img {
     height: 2rem;
+    width: auto;
 }
 
 .navbar-nav li {
@@ -106,11 +107,11 @@ font-weight: 700;
 text-transform: uppercase;
 margin-bottom: 1.9rem;
 }
-.heading-underling{
-width: 12rem;
-height: .2rem;
-background-color: #7100ce;
-margin: 0 auto 2rem;
+.heading-underline {
+    width: 12rem;
+    height: .2rem;
+    background-color: #7100ce;
+    margin: 0 auto 2rem;
 }
 
 .headshot img {
@@ -143,8 +144,8 @@ margin: 0 auto 2rem;
     margin-bottom: 1.9rem;
 }
 
-.feature svg.svg-inline--fa {
-    color:white;
+.feature i {
+    color: white;
 }
 
 .fixed-background h3{
@@ -217,28 +218,30 @@ footer {
     color: white;
     padding: 2rem 0 2rem 0;
     text-align: center;
-    margin-top: -1rem;;
+    margin-top: -1rem;
 }
 
-footer img {
+footer .footer-logo {
     width: 5rem;
     height: 5rem;
     margin: 1.5rem 0;
+    object-fit: contain;
 }
 
 footer a {
     color: white;
 }
 
-footer svg.svg-inline--fa{
+footer .fa-brands {
     font-size: 3rem;
     margin: 1.2rem 0.5rem 0 0.5rem;
 }
-footer svg.svg-inline--fa:hover{
+footer a:hover .fa-brands {
     color: #7100ce !important;
 }
 
-hr.socket{
-width:100%;
-border-top: 0.2rem solid #353535
+hr.socket {
+    width: 100%;
+    border-top: 0.2rem solid #353535;
+    margin-bottom: 0.75rem;
 }

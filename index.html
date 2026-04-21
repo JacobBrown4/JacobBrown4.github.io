@@ -4,41 +4,45 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Portfolio of Jacob Brown — software engineer with experience in .NET, web development, and Agile.">
 	<title>Jacob Brown's Portfolio</title>
-	<link rel="stylesheet" href="bootstrap-4.1.3-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="icon" type="image/png" href="img/JBFavicon.png">
 </head>
 
-<body data-spy="scroll" data-target="#navbarResponsive">
+<body data-bs-spy="scroll" data-bs-target="#navbarResponsive" data-bs-offset="80" tabindex="0">
 	<!--Home Start-->
 	<div id="home">
 
 		<!--Nav start-->
 		<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-			<a class="navbar-brand" href="#"><img src="img/JBLogo2020MonochromeBold.png"></a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-				<span class="navbar-toggler-icon"></span></button>
-
-			<div class="collapse navbar-collapse" id="navbarResponsive">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item">
-						<a class="nav-link" href="#home">Home</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#aboutMe">About Me</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#skills">Skills</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#portfolio">portfolio</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#contact">Contact Me</a>
-					</li>
-				</ul>
+			<div class="container-fluid">
+				<a class="navbar-brand py-0" href="#home"><img src="img/JBLogo2020MonochromeBold.png" alt="Jacob Brown"></a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ms-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="#home">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#aboutMe">About Me</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#skills">Skills</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#portfolio">Portfolio</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#contact">Contact Me</a>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</nav>
 		<!--Nav end-->
@@ -62,40 +66,47 @@
 	<div id="aboutMe" class="offset">
 		<!--JumboTron-->
 		<div class="jumbotron">
-			<div class="col-12 text-center">
-				<h3 class="heading">About Me</h3>
-				<div class="heading-underling"></div>
+			<div class="row">
+				<div class="col-12 text-center">
+					<h3 class="heading">About Me</h3>
+					<div class="heading-underline" role="presentation"></div>
+				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12 aboutMe">
 					<div class="row justify-content-center">
 						<div class="col-md-4 headshot">
-							<img src="img/MyHeadshot.jpg">
+							<img src="img/MyHeadshot.jpg" alt="Portrait of Jacob Brown">
 						</div>
 						<div class="col-md-5">
-							<h6>My Journey</h6>
-							<ul>
-								<li>Graphic Design</li>
-								<p>Self taught and doing Graphic Design freelance in high school. I really enjoyed the
-									work but found that the work was inconsistent. I was at Purdue for Mechanical
-									Engineering at this time.</p>
-								<li>Manufacturing Management</li>
-								<p>After financial issues prevented me from continuing Purdue, I found myself working
-									with people with disabilities in the healthcare field for a few years. I really
-									enjoyed the work but needed a challenge. I eventually moved into manufacturing
-									within the same company and quickly started leading teams and began leaning into Six
-									Sigma ideals and even became Lean certified.</p>
-								<li>Software Engineer</li>
-								<p>After Covid-19 hit my place of work and the manufacturing industry hard and I found
-									myself looking at a new opportunity. After graduating from the Eleven Fifty Academy
-									in October I quickly gained the skills I need to start working in a challenging new
-									career. I was quickly offered a job at EFA as a learning assistant and was offered to progress into the instructor training program. From there I started working as a .NET Developer outside of instructing</p>
+							<h2 class="h6 text-uppercase">My Journey</h2>
+							<ul class="list-unstyled journey-list mb-0">
+								<li>
+									<h3 class="h6 mb-1">Graphic Design</h3>
+									<p class="mb-3">Self taught and doing Graphic Design freelance in high school. I really enjoyed the
+										work but found that the work was inconsistent. I was at Purdue for Mechanical
+										Engineering at this time.</p>
+								</li>
+								<li>
+									<h3 class="h6 mb-1">Manufacturing Management</h3>
+									<p class="mb-3">After financial issues prevented me from continuing Purdue, I found myself working
+										with people with disabilities in the healthcare field for a few years. I really
+										enjoyed the work but needed a challenge. I eventually moved into manufacturing
+										within the same company and quickly started leading teams and began leaning into Six
+										Sigma ideals and even became Lean certified.</p>
+								</li>
+								<li>
+									<h3 class="h6 mb-1">Software Engineer</h3>
+									<p class="mb-0">After Covid-19 hit my place of work and the manufacturing industry hard and I found
+										myself looking at a new opportunity. After graduating from the Eleven Fifty Academy
+										in October I quickly gained the skills I need to start working in a challenging new
+										career. I was quickly offered a job at EFA as a learning assistant and was offered to progress into the instructor training program. From there I started working as a .NET Developer outside of instructing.</p>
+								</li>
 							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
-			<!--End Row-->
 		</div>
 		<!--EndJumboTron-->
 	</div>
@@ -106,11 +117,11 @@
 			<div class="row dark text-center">
 				<div class="col-12 text-center">
 					<h2 class="heading">My Skills</h2>
-					<div class="heading-underling"></div>
+					<div class="heading-underline" role="presentation"></div>
 				</div>
 				<div class="col-md-4">
 					<div class="feature">
-						<i class="fas fa-code fa-4x" data-fa-transform="shrink-3 up-5"></i>
+						<i class="fa-solid fa-code fa-4x"></i>
 					</div>
 					<h3>C#/ASP.Net/MVC</h3>
 					<ul>
@@ -122,7 +133,7 @@
 				</div>
 				<div class="col-md-4">
 					<div class="feature">
-						<i class="fas fa-chalkboard-teacher fa-4x" data-fa-transform="shrink-3 up-5"></i>
+						<i class="fa-solid fa-chalkboard-user fa-4x"></i>
 					</div>
 					<h3>Agile/Lean/Six Sigma</h3>
 					<ul>
@@ -136,11 +147,11 @@
 				</div>
 				<div class="col-md-4">
 					<div class="feature">
-						<i class="fab fa-html5 fa-4x" data-fa-transform="shrink-3 up-5"></i>
+						<i class="fa-brands fa-html5 fa-4x"></i>
 					</div>
-					<h3>HTML/CSS/BootStrap</h3>
+					<h3>HTML/CSS/Bootstrap</h3>
 					<ul>
-						<li>Strong understanding of BootStrap and CSS styling.</li>
+						<li>Strong understanding of Bootstrap and CSS styling.</li>
 						<li>Years of experience in graphic design to create images and assets easily.</li>
 						<li>Strong knowledge of HTML and CSS interactions.</li>
 					</ul>
@@ -158,11 +169,12 @@
 		<div class="row">
 			<div class="col-12">
 				<h3 class="heading">Portfolio</h3>
-				<div class="heading-underling"></div>
+				<div class="heading-underline" role="presentation"></div>
 			</div>
-			<div class="row justify-content-center">
+		</div>
+		<div class="row justify-content-center">
 				<div class="col-md-2 project">
-					<a href="https://matterdb.azurewebsites.net/"><img src="img/MatterDb.png"></a>
+					<a href="https://matterdb.azurewebsites.net/" rel="noopener noreferrer"><img src="img/MatterDb.png" alt="MatterDb project thumbnail"></a>
 					<h6>MatterDb</h6>
 					<p>This is a MVC Database that allow a user to create atoms and molecules in a database. Using those
 						database connections the database is able to use chemical formulas to generate data about upper
@@ -170,51 +182,49 @@
 						chemical formulas to automatically link all the atoms needed in the correct amounts.</p>
 				</div>
 				<div class="col-md-2 project">
-					<a href="https://github.com/MitchReed123/SpooderManCars"><img src="img/SpooderManSq.png"></a>
+					<a href="https://github.com/MitchReed123/SpooderManCars" rel="noopener noreferrer"><img src="img/SpooderManSq.png" alt="Team API database project thumbnail"></a>
 					<h6>Team API Database Project</h6>
 					<p>This is an ASP.NET program that will allow a user to create a car collection of linked cars,
 						manufacturers, and locations through API calls to a database. This was done on a team of four
 						and heavily relied on communication and using GIT for version control and merges.</p>
 				</div>
 				<div class="col-md-2 project">
-					<a href="https://github.com/JacobBrown4/GoldBadge"><img src="img/GoldBadge.png"></a>
+					<a href="https://github.com/JacobBrown4/GoldBadge" rel="noopener noreferrer"><img src="img/GoldBadge.png" alt="Gold Badge project thumbnail"></a>
 					<h6>Gold Badge Project</h6>
 					<p>This is a series of basic fundamentals of C# challenges and unit tests. The point was to show an
 						understanding of object oriented programming and testing the logic created.</p>
 				</div>
 				<div class="col-md-2 project">
-					<a href="https://github.com/JacobBrown4/BlackJack"><img src="img/BJack.png"></a>
+					<a href="https://github.com/JacobBrown4/BlackJack" rel="noopener noreferrer"><img src="img/BJack.png" alt="BlackJack project thumbnail"></a>
 					<h6>C# BlackJack</h6>
 					<p>The classic casino game, recreated in C# as a console game. Displays your cards, can be played
 						with standard Black Jack actions, and bet tracking</p>
 				</div>
 			</div>
-			<div class="row justify-content-center">
+		<div class="row justify-content-center">
 				<div class="col-md-2 project">
-					<a href="https://github.com/JacobBrown4/JBUniversity"><img src="img/Project1.jpg"></a>
+					<a href="https://github.com/JacobBrown4/JBUniversity" rel="noopener noreferrer"><img src="img/Project1.jpg" alt="JBUniversity API project thumbnail"></a>
 					<h6>JBUniversity API</h6>
 					<p>A .net framework API that I created for software curriculum teaching. It's main purpose to was to show junction/joining tables in a database and applying logic to automatically handle those tables and there interactions.</p>
 				</div>
 				<div class="col-md-2 project">
-					<a href="https://jacobbrown4.github.io/Projects/StoreFront/"><img src="img/GGStoreFront.jpeg"></a>
+					<a href="https://jacobbrown4.github.io/Projects/StoreFront/" rel="noopener noreferrer"><img src="img/GGStoreFront.jpeg" alt="Galaxy Games storefront mockup"></a>
 					<h6>Static Storefront</h6>
 					<p>A simple mockup of a fake game store, Galaxy Games. This was to show a understanding of HTML/CSS
-						as the only components. The website is also mobile responsive without the use of BootStrap.</p>
+						as the only components. The website is also mobile responsive without the use of Bootstrap.</p>
 				</div>
 				<div class="col-md-2 project">
-					<a href="https://github.com/JacobBrown4/BurgerSync"><img src="img/burger.png"></a>
+					<a href="https://github.com/JacobBrown4/BurgerSync" rel="noopener noreferrer"><img src="img/burger.png" alt="BurgerSync project thumbnail"></a>
 					<h6>BurgerSync</h6>
 					<p>This is a simple program I created to help teach the concept of Asynchronous methods in C#. It's fairly simple but logically a bit layered so to showcase multithreading and setting up race conditions in a simple metaphor. There's a bit of comments to help explain the process.</p>
 				</div>
 				<div class="col-md-2 project">
-					<a href="https://github.com/Jacobbrown4"><img src="img/25231.svg"></a>
+					<a href="https://github.com/Jacobbrown4" rel="noopener noreferrer"><img src="img/github-logo.svg" alt="GitHub"></a>
 					<h6>My GitHub</h6>
 					<p>Where I'm keeping some of my WIP's and future projects</p>
 				</div>
 			</div>
-		</div>
 	</div>
-	<!--Resume Download Finish-->
 	<!--portfolio End-->
 	<!--Contact Me Start-->
 	<div id="contact" class="offset">
@@ -222,15 +232,11 @@
 		<footer>
 			<div class="row justify-content-center">
 				<div class="col-md-4 text-center">
-					<img src="img/JBLogo2020MonochromeBold.png">
-					<br>
-					<strong>Contact Info</strong>
-					<a href="mailto:jacobbrown4@gmail.com">
-						<p>JacobBrown4@gmail.com</p>
-					</a>
-					<a href="https://github.com/Jacobbrown4" target="_blank"><i class="fab fa-github-square"></i></a>
-					<a href="https://www.linkedin.com/in/jacobbrown4SD" target="_blank"><i
-							class="fab fa-linkedin"></i></a>
+					<img class="footer-logo" src="img/JBLogo2020MonochromeBold.png" alt="Jacob Brown logo">
+					<strong class="d-block mt-2">Contact Info</strong>
+					<a class="d-block text-white text-decoration-none" href="mailto:jacobbrown4@gmail.com">JacobBrown4@gmail.com</a>
+					<a href="https://github.com/Jacobbrown4" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-square-github" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+					<a href="https://www.linkedin.com/in/jacobbrown4SD" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i><span class="visually-hidden">LinkedIn</span></a>
 				</div>
 			</div>
 			<hr class="socket"> &copy; Jacob Brown
@@ -239,11 +245,7 @@
 	</div>
 	<!--Contact Me End-->
 
-	<!--- BootStrap References and Font Awesome Plugin -->
-	<script src="js/jquery-3.3.1.min.js"></script>
-	<script src="bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
-	<script src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"></script>
-
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
 
