@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
 	<style>
+		/* --- Tokens --- */
 		:root {
 			--jb-bg: #121214;
 			--jb-bg-elevated: #1c1c21;
@@ -21,6 +22,14 @@
 			--jb-card-border: rgba(255, 255, 255, 0.08);
 			--jb-link: #c9a8ff;
 			--jb-link-hover: #e4d4ff;
+			--jb-ease-out: cubic-bezier(0.33, 1, 0.68, 1);
+			--jb-duration: 0.35s;
+			--jb-scrim-top: rgba(10, 10, 12, 0.88);
+			--jb-scrim-mid: rgba(10, 10, 12, 0.82);
+			--jb-scrim-bot: rgba(10, 10, 12, 0.97);
+			--jb-header-border: rgba(18, 18, 22, 0.98);
+			--jb-photo-ring: rgba(157, 92, 255, 0.25);
+			--jb-card-open-ring: rgba(157, 92, 255, 0.35);
 		}
 
 		html {
@@ -30,8 +39,7 @@
 		body {
 			font-family: 'Montserrat', system-ui, sans-serif;
 			color: var(--jb-text);
-			background: var(--jb-bg);
-			background-image: linear-gradient(180deg, #16161a 0%, var(--jb-bg) 42%);
+			background: var(--jb-bg) linear-gradient(180deg, #16161a 0%, var(--jb-bg) 42%);
 			min-height: 100vh;
 		}
 
@@ -47,35 +55,28 @@
 			color: var(--jb-text-muted) !important;
 		}
 
+		/* --- Header + hero --- */
 		.page-header {
 			position: relative;
+			isolation: isolate;
 			color: #fff;
 			padding: 1.75rem 0 2rem;
 			margin-bottom: 1.5rem;
-			border-bottom: 1px solid rgba(18, 18, 22, 0.98);
+			border-bottom: 1px solid var(--jb-header-border);
 			background-color: var(--jb-header);
-			isolation: isolate;
 		}
 
 		.page-header::before {
 			content: '';
 			position: absolute;
-			left: 0;
-			top: 0;
-			right: 0;
-			bottom: 0;
+			inset: 0;
 			z-index: 0;
 			pointer-events: none;
 			background-image:
-				linear-gradient(
-					180deg,
-					rgba(10, 10, 12, 0.88) 0%,
-					rgba(10, 10, 12, 0.82) 65%,
-					rgba(10, 10, 12, 0.97) 100%
-				),
+				linear-gradient(180deg, var(--jb-scrim-top) 0%, var(--jb-scrim-mid) 65%, var(--jb-scrim-bot) 100%),
 				url(img/banner.jpg);
 			background-size: cover;
-			background-position: center center;
+			background-position: center;
 			background-repeat: no-repeat;
 			transform: translateZ(0);
 		}
@@ -105,8 +106,8 @@
 			color: var(--jb-link);
 			font-size: 0.85em;
 			line-height: 1;
-			text-decoration: none;
 			vertical-align: middle;
+			text-decoration: none;
 			opacity: 0.95;
 		}
 
@@ -124,9 +125,9 @@
 		.accent-rule {
 			width: 6rem;
 			height: 0.2rem;
-			background-color: var(--jb-accent-dim);
-			border-radius: 999px;
 			margin: 0.75rem 0 0;
+			border-radius: 999px;
+			background-color: var(--jb-accent-dim);
 		}
 
 		.hero-photo-frame {
@@ -140,7 +141,7 @@
 			background: var(--jb-bg-elevated);
 			border: 2px solid var(--jb-accent);
 			box-shadow:
-				0 0 0 1px rgba(157, 92, 255, 0.25),
+				0 0 0 1px var(--jb-photo-ring),
 				0 0 1.25rem rgba(157, 92, 255, 0.12),
 				0 0.5rem 2rem rgba(0, 0, 0, 0.45);
 		}
@@ -153,6 +154,38 @@
 			object-position: center;
 		}
 
+		.intro-row {
+			align-items: stretch;
+		}
+
+		.intro-photo-col {
+			display: flex;
+			justify-content: center;
+		}
+
+		@media (min-width: 992px) {
+			.intro-row {
+				align-items: center;
+				--bs-gutter-x: 1rem;
+			}
+
+			.section-title--align-start-lg {
+				text-align: left;
+			}
+
+			.intro-photo-col {
+				justify-content: flex-start;
+			}
+
+			.intro-photo-col .hero-photo-frame {
+				width: 300px;
+				max-width: 100%;
+				margin-left: 0;
+				margin-right: 0;
+			}
+		}
+
+		/* --- Section titles --- */
 		.section-title {
 			font-weight: 700;
 			text-transform: uppercase;
@@ -163,209 +196,13 @@
 			text-align: center;
 		}
 
-		.hero-intro-row {
-			align-items: stretch;
-		}
-
-		.hero-photo-col {
-			display: flex;
-			justify-content: center;
-		}
-
-		@media (min-width: 992px) {
-			.hero-intro-row {
-				align-items: center;
-				--bs-gutter-x: 1rem;
-			}
-
-			.section-title.section-title--with-hero {
-				text-align: left;
-			}
-
-			.hero-photo-col {
-				justify-content: flex-start;
-			}
-
-			.hero-photo-col .hero-photo-frame {
-				width: 300px;
-				max-width: 100%;
-				margin-left: 0;
-				margin-right: 0;
-			}
-		}
-
-		.row-notes {
-			justify-content: center;
-		}
-
-		.row-notes .info-card h2 {
-			justify-content: center;
-		}
-
-		.commands-preface {
-			font-size: 0.85rem;
-			color: var(--jb-text-muted);
-			border-left: 3px solid var(--jb-accent-dim);
-			padding-left: 0.75rem;
-			margin-bottom: 1rem;
-			line-height: 1.45;
-		}
-
-		.commands-heading {
-			margin-bottom: 0;
-		}
-
-		.commands-toggle {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			gap: 0.5rem;
-			width: 100%;
-			padding: 0.4rem 0.6rem;
-			margin: 0 0 0.15rem;
-			border: none;
-			border-radius: 0.5rem;
-			background: transparent;
-			color: inherit;
-			font: inherit;
-			font-weight: 700;
-			font-size: 1rem;
-			cursor: pointer;
-			-webkit-tap-highlight-color: transparent;
-		}
-
-		.commands-toggle:hover {
-			background: rgba(255, 255, 255, 0.06);
-		}
-
-		.commands-toggle:focus-visible {
-			outline: 2px solid var(--jb-accent);
-			outline-offset: 2px;
-		}
-
-		.commands-toggle .commands-chevron {
-			font-size: 0.72rem;
-			color: var(--jb-accent);
-			opacity: 0.95;
-			transition: transform 0.35s cubic-bezier(0.33, 1, 0.68, 1);
-		}
-
-		.commands-toggle[aria-expanded='true'] .commands-chevron {
-			transform: rotate(180deg);
-		}
-
-		.commands-tap-hint {
-			margin-bottom: 0.5rem;
-			line-height: 1.35;
-		}
-
-		.commands-card:has(.commands-toggle[aria-expanded='true']) .commands-tap-hint {
-			display: none;
-		}
-
-		.row-notes .commands-col {
-			display: flex;
-			flex-direction: column;
-		}
-
-		.info-card.commands-card {
-			flex: 1 1 auto;
-			width: 100%;
-			height: auto;
-			display: flex;
-			flex-direction: column;
-			min-height: 100%;
-			cursor: pointer;
-			transition: border-color 0.35s ease, box-shadow 0.35s ease;
-			-webkit-tap-highlight-color: transparent;
-		}
-
-		.commands-card-body {
-			flex: 1 1 auto;
-			display: flex;
-			flex-direction: column;
-			min-height: 0;
-		}
-
-		.commands-card:has(.commands-toggle[aria-expanded='true']) {
-			border-color: rgba(157, 92, 255, 0.35);
-			box-shadow:
-				0 0 0 1px rgba(157, 92, 255, 0.18),
-				0 0.35rem 1.15rem rgba(0, 0, 0, 0.28);
-		}
-
-		#commandsCollapse {
-			overflow: hidden;
-		}
-
-		#commandsCollapse.collapsing {
-			transition: height 0.55s cubic-bezier(0.33, 1, 0.68, 1) !important;
-		}
-
-		.commands-collapse-inner {
-			opacity: 0;
-			transform: translateY(-0.4rem);
-			transition: opacity 0.4s ease 0.08s, transform 0.4s cubic-bezier(0.33, 1, 0.68, 1) 0.08s;
-		}
-
-		#commandsCollapse.show .commands-collapse-inner {
-			opacity: 1;
-			transform: translateY(0);
-		}
-
-		@media (prefers-reduced-motion: reduce) {
-			.info-card.commands-card {
-				transition: none;
-			}
-
-			#commandsCollapse.collapsing {
-				transition: height 0.15s ease !important;
-			}
-
-			.commands-collapse-inner,
-			#commandsCollapse.show .commands-collapse-inner {
-				opacity: 1;
-				transform: none;
-				transition: none;
-			}
-
-			.commands-toggle .commands-chevron {
-				transition: none;
-			}
-		}
-
-		.row-vet {
-			justify-content: center;
-		}
-
-		.vet-card .card-body {
-			text-align: center;
-		}
-
-		.vet-card h2 {
-			justify-content: center;
-		}
-
-		.vet-card dt {
-			justify-content: center;
-		}
-
-		.sitter-card {
-			max-width: 42rem;
-			margin-left: auto;
-			margin-right: auto;
-		}
-
-		.sitter-card .card-body {
-			text-align: center;
-		}
-
+		/* --- Shared cards --- */
 		.info-card {
+			height: 100%;
 			border: 1px solid var(--jb-card-border);
 			border-radius: 0.75rem;
 			background: var(--jb-bg-elevated);
 			box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.25);
-			height: 100%;
 		}
 
 		.info-card strong {
@@ -377,15 +214,15 @@
 		}
 
 		.info-card h2 {
-			font-size: 1rem;
-			font-weight: 700;
-			margin-bottom: 0.65rem;
 			display: flex;
 			align-items: center;
 			gap: 0.5rem;
+			margin-bottom: 0.65rem;
+			font-size: 1rem;
+			font-weight: 700;
 		}
 
-		.info-card h2 i {
+		.info-card h2 i:not(.cmd-chevron) {
 			color: var(--jb-accent);
 			font-size: 1.1rem;
 		}
@@ -401,11 +238,11 @@
 		}
 
 		.info-card dt {
-			font-weight: 600;
-			margin-top: 0.5rem;
 			display: flex;
 			align-items: baseline;
 			gap: 0.45rem;
+			margin-top: 0.5rem;
+			font-weight: 600;
 		}
 
 		.info-card dt:first-child {
@@ -413,32 +250,185 @@
 		}
 
 		.info-card dt .dt-icon {
-			flex-shrink: 0;
-			width: 0.85rem;
-			text-align: center;
-			font-size: 0.68rem;
-			color: var(--jb-accent);
-			opacity: 0.9;
 			position: relative;
 			top: 0.05rem;
-		}
-
-		.info-card.commands-card dt {
-			align-items: center;
-			gap: 0.55rem;
-		}
-
-		.info-card.commands-card dt .dt-icon {
-			width: 1.2rem;
-			font-size: 1.05rem;
-			color: #fff;
-			opacity: 1;
-			top: 0;
-			filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
+			flex-shrink: 0;
+			width: 0.85rem;
+			font-size: 0.68rem;
+			text-align: center;
+			color: var(--jb-accent);
+			opacity: 0.9;
 		}
 
 		.info-card dd {
 			margin-bottom: 0;
+		}
+
+		/* Notes + vet: centered card titles / vet body */
+		.section-notes .info-card > .card-body > h2 {
+			justify-content: center;
+		}
+
+		.section-vet .vet-card .card-body {
+			text-align: center;
+		}
+
+		.section-vet .vet-card h2,
+		.section-vet .vet-card dt {
+			justify-content: center;
+		}
+
+		.vet-card--accent {
+			border-left-color: var(--jb-accent-dim) !important;
+		}
+
+		/* Commands card (collapsible) — `cmd-*` namespace */
+		.section-notes .cmd-col {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.info-card.cmd-card {
+			display: flex;
+			flex-direction: column;
+			flex: 1 1 auto;
+			width: 100%;
+			height: auto;
+			min-height: 100%;
+			cursor: pointer;
+			transition: border-color var(--jb-duration) ease, box-shadow var(--jb-duration) ease;
+			-webkit-tap-highlight-color: transparent;
+		}
+
+		.cmd-body {
+			display: flex;
+			flex: 1 1 auto;
+			flex-direction: column;
+			min-height: 0;
+		}
+
+		.cmd-card:has(.cmd-toggle[aria-expanded='true']) {
+			border-color: var(--jb-card-open-ring);
+			box-shadow:
+				0 0 0 1px rgba(157, 92, 255, 0.18),
+				0 0.35rem 1.15rem rgba(0, 0, 0, 0.28);
+		}
+
+		.cmd-heading {
+			margin-bottom: 0;
+		}
+
+		.cmd-toggle {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 0.5rem;
+			width: 100%;
+			margin: 0 0 0.15rem;
+			padding: 0.4rem 0.6rem;
+			border: none;
+			border-radius: 0.5rem;
+			background: transparent;
+			color: inherit;
+			font: inherit;
+			font-weight: 700;
+			font-size: 1rem;
+			cursor: pointer;
+			-webkit-tap-highlight-color: transparent;
+		}
+
+		.cmd-toggle:hover {
+			background: rgba(255, 255, 255, 0.06);
+		}
+
+		.cmd-toggle:focus-visible {
+			outline: 2px solid var(--jb-accent);
+			outline-offset: 2px;
+		}
+
+		.cmd-toggle .cmd-chevron {
+			font-size: 0.72rem;
+			color: var(--jb-accent);
+			opacity: 0.95;
+			transition: transform var(--jb-duration) var(--jb-ease-out);
+		}
+
+		.cmd-toggle[aria-expanded='true'] .cmd-chevron {
+			transform: rotate(180deg);
+		}
+
+		.cmd-hint {
+			margin-bottom: 0.5rem;
+			line-height: 1.35;
+		}
+
+		.cmd-card:has(.cmd-toggle[aria-expanded='true']) .cmd-hint {
+			display: none;
+		}
+
+		.cmd-preface {
+			margin-bottom: 1rem;
+			padding-left: 0.75rem;
+			border-left: 3px solid var(--jb-accent-dim);
+			font-size: 0.85rem;
+			line-height: 1.45;
+			color: var(--jb-text-muted);
+		}
+
+		#cmd-panel {
+			overflow: hidden;
+		}
+
+		#cmd-panel.collapsing {
+			transition: height 0.55s var(--jb-ease-out) !important;
+		}
+
+		.cmd-inner {
+			opacity: 0;
+			transform: translateY(-0.4rem);
+			transition:
+				opacity 0.4s ease 0.08s,
+				transform 0.4s var(--jb-ease-out) 0.08s;
+		}
+
+		#cmd-panel.show .cmd-inner {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		.info-card.cmd-card dt {
+			align-items: center;
+			gap: 0.55rem;
+		}
+
+		.info-card.cmd-card dt .dt-icon {
+			top: 0;
+			width: 1.2rem;
+			font-size: 1.05rem;
+			color: #fff;
+			opacity: 1;
+			filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			.info-card.cmd-card {
+				transition: none;
+			}
+
+			#cmd-panel.collapsing {
+				transition: height 0.15s ease !important;
+			}
+
+			.cmd-inner,
+			#cmd-panel.show .cmd-inner {
+				opacity: 1;
+				transform: none;
+				transition: none;
+			}
+
+			.cmd-toggle .cmd-chevron {
+				transition: none;
+			}
 		}
 
 	</style>
@@ -454,14 +444,14 @@
 	</header>
 
 	<main class="container pb-4">
-		<div class="row g-4 mb-4 hero-intro-row">
-			<div class="col-12 col-lg-auto hero-photo-col">
+		<div class="row g-4 mb-4 intro-row">
+			<div class="col-12 col-lg-auto intro-photo-col">
 				<div class="hero-photo-frame">
 					<img class="hero-photo" src="img/Carina.jpg" alt="Carina" width="800" height="800">
 				</div>
 			</div>
 			<div class="col-12 col-lg d-flex flex-column justify-content-center">
-				<p class="section-title section-title--with-hero mb-2">At a glance</p>
+				<p class="section-title section-title--align-start-lg mb-2">At a glance</p>
 				<div class="row g-3 flex-grow-1 align-items-stretch">
 					<div class="col-sm-6 d-flex">
 						<div class="info-card w-100">
@@ -505,8 +495,9 @@
 			</div>
 		</div>
 
+		<section class="section-notes" aria-label="Daily notes">
 		<p class="section-title">Notes</p>
-		<div class="row g-3 mb-4 row-notes justify-content-center">
+		<div class="row g-3 mb-4 justify-content-center">
 			<div class="col-12 col-md-6 col-xl-3">
 				<div class="info-card">
 					<div class="card-body">
@@ -550,41 +541,41 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-xl-3 commands-col">
-				<div class="info-card commands-card">
-					<div class="card-body commands-card-body">
-						<h2 class="commands-heading">
-							<button type="button" class="commands-toggle" id="commandsToggle" data-bs-toggle="collapse" data-bs-target="#commandsCollapse" aria-expanded="false" aria-controls="commandsCollapse">
+			<div class="col-12 col-md-6 col-xl-3 cmd-col">
+				<div class="info-card cmd-card">
+					<div class="card-body cmd-body">
+						<h2 class="cmd-heading">
+							<button type="button" class="cmd-toggle" id="cmd-toggle" data-bs-toggle="collapse" data-bs-target="#cmd-panel" aria-expanded="false" aria-controls="cmd-panel">
 								<i class="fa-solid fa-hand-sparkles" aria-hidden="true"></i>
 								<span>Commands</span>
-								<i class="fa-solid fa-chevron-down commands-chevron" aria-hidden="true"></i>
+								<i class="fa-solid fa-chevron-down cmd-chevron" aria-hidden="true"></i>
 							</button>
 						</h2>
-						<p class="commands-tap-hint small text-muted text-center">Tap to expand</p>
-						<div class="collapse" id="commandsCollapse" role="region" aria-labelledby="commandsToggle">
-							<div class="commands-collapse-inner">
-								<p class="commands-preface mb-0">She is much more responsive to hand gestures than verbal ones for these commands. Doing both at once will help.</p>
+						<p class="cmd-hint small text-muted text-center">Tap to expand or collapse</p>
+						<div class="collapse" id="cmd-panel" role="region" aria-labelledby="cmd-toggle">
+							<div class="cmd-inner">
+								<p class="cmd-preface mb-0">She is much more responsive to hand gestures than verbal ones for these commands. Doing both at once will help.</p>
 								<dl class="mt-3 mb-0">
-								<dt><i class="fa-solid fa-hand-point-down dt-icon" aria-hidden="true"></i> Sit</dt>
-								<dd>Point down with your finger.</dd>
-								<dt><i class="fa-solid fa-hand dt-icon" aria-hidden="true"></i> Down</dt>
-								<dd>Gesture down with a flat hand.</dd>
-								<dt><i class="fa-solid fa-handshake dt-icon" aria-hidden="true"></i> Shake</dt>
-								<dd>Hold out your hand, palm up.</dd>
-								<dt><i class="fa-solid fa-hands dt-icon" aria-hidden="true"></i> Wave</dt>
-								<dd>Wave “hi.”</dd>
-								<dt><i class="fa-solid fa-hand-paper dt-icon" aria-hidden="true"></i> Wait</dt>
-								<dd>Open palm, “stop” gesture. Release with an <strong>okay</strong>. Somewhat reliable, still working on it.</dd>
-								<dt><i class="fa-solid fa-volume-xmark dt-icon" aria-hidden="true"></i> Shhh</dt>
-								<dd>Finger to your mouth and make a shh sound. Won't instantly stop her barking but will get her to start calming down until she will.</dd>
-								<dt><i class="fa-solid fa-arrows-spin dt-icon" aria-hidden="true"></i> Spin</dt>
-								<dd>Point down and spin your finger.</dd>
-								<dt><i class="fa-solid fa-hand-holding dt-icon" aria-hidden="true"></i> Up</dt>
-								<dd>Flat hand, palm facing up, gesturing upward. Contextual, she may jump in place, lean up on something, or get on top of something. She'll figure it out, she's smart.</dd>
-								<dt><i class="fa-solid fa-volume-high dt-icon" aria-hidden="true"></i> Come</dt>
-								<dd>No real command, but is trained to come to a good mouth whistle (somewhat reliable), and to her electronic dog whistle (<strong>Very</strong> reliable and from up to a mile away).</dd>
-								<dt><i class="fa-solid fa-box dt-icon" aria-hidden="true"></i> Crate</dt>
-								<dd>Verbal command mostly.</dd>
+									<dt><i class="fa-solid fa-hand-point-down dt-icon" aria-hidden="true"></i> Sit</dt>
+									<dd>Point down with your finger.</dd>
+									<dt><i class="fa-solid fa-hand dt-icon" aria-hidden="true"></i> Down</dt>
+									<dd>Gesture down with a flat hand.</dd>
+									<dt><i class="fa-solid fa-handshake dt-icon" aria-hidden="true"></i> Shake</dt>
+									<dd>Hold out your hand, palm up.</dd>
+									<dt><i class="fa-solid fa-hands dt-icon" aria-hidden="true"></i> Wave</dt>
+									<dd>Wave “hi.”</dd>
+									<dt><i class="fa-solid fa-hand-paper dt-icon" aria-hidden="true"></i> Wait</dt>
+									<dd>Open palm, “stop” gesture. Release with an <strong>okay</strong>. Somewhat reliable, still working on it.</dd>
+									<dt><i class="fa-solid fa-volume-xmark dt-icon" aria-hidden="true"></i> Shhh</dt>
+									<dd>Finger to your mouth and make a shh sound. Won't instantly stop her barking but will get her to start calming down until she will.</dd>
+									<dt><i class="fa-solid fa-arrows-spin dt-icon" aria-hidden="true"></i> Spin</dt>
+									<dd>Point down and spin your finger.</dd>
+									<dt><i class="fa-solid fa-hand-holding dt-icon" aria-hidden="true"></i> Up</dt>
+									<dd>Flat hand, palm facing up, gesturing upward. Contextual, she may jump in place, lean up on something, or get on top of something. She'll figure it out, she's smart.</dd>
+									<dt><i class="fa-solid fa-volume-high dt-icon" aria-hidden="true"></i> Come</dt>
+									<dd>No real command, but is trained to come to a good mouth whistle (somewhat reliable), and to her electronic dog whistle (<strong>Very</strong> reliable and from up to a mile away).</dd>
+									<dt><i class="fa-solid fa-box dt-icon" aria-hidden="true"></i> Crate</dt>
+									<dd>Verbal command mostly.</dd>
 								</dl>
 							</div>
 						</div>
@@ -592,11 +583,13 @@
 				</div>
 			</div>
 		</div>
+		</section>
 
+		<section class="section-vet" aria-label="Veterinarian">
 		<p class="section-title">Vet info</p>
-		<div class="row g-3 mb-2 row-vet justify-content-center">
+		<div class="row g-3 mb-2 justify-content-center">
 			<div class="col-12 col-lg-8 col-xl-7">
-				<div class="info-card vet-card border-start border-4" style="border-left-color: var(--jb-accent-dim) !important;">
+				<div class="info-card vet-card vet-card--accent border-start border-4">
 					<div class="card-body">
 						<h2><i class="fa-solid fa-stethoscope" aria-hidden="true"></i> Vet</h2>
 						<dl>
@@ -611,15 +604,15 @@
 				</div>
 			</div>
 		</div>
+		</section>
 	</main>
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 	<script>
 		(function () {
-			var card = document.querySelector('.commands-card');
-			var collapseEl = document.getElementById('commandsCollapse');
-			var toggleBtn = document.getElementById('commandsToggle');
-			if (card && collapseEl && toggleBtn) {
+			var card = document.querySelector('.cmd-card');
+			var toggleBtn = document.getElementById('cmd-toggle');
+			if (card && toggleBtn) {
 				card.addEventListener('click', function (e) {
 					if (toggleBtn.contains(e.target)) {
 						return;
@@ -627,10 +620,7 @@
 					toggleBtn.click();
 				});
 			}
-		})();
-	</script>
-	<script>
-		(function () {
+
 			var birth = new Date(2022, 2, 18);
 			var today = new Date();
 			var years = today.getFullYear() - birth.getFullYear();
@@ -642,8 +632,8 @@
 				years--;
 				months += 12;
 			}
-			var el = document.getElementById('carina-age');
-			if (!el) {
+			var ageEl = document.getElementById('carina-age');
+			if (!ageEl) {
 				return;
 			}
 			var yLabel = years === 1 ? 'year' : 'years';
@@ -656,7 +646,7 @@
 			} else {
 				text = months + ' ' + mLabel + ' old';
 			}
-			el.textContent = text;
+			ageEl.textContent = text;
 		})();
 	</script>
 </body>
